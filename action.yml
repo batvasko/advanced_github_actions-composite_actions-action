@@ -42,11 +42,11 @@ runs:
       shell: bash
     
     - name: flake8
-      run: flake8 --ignore=E501,E231 ${{ steps.project_files.outputs.files }}
+      run: flake8 --ignore=E501,E231 ${{ env.PROJECT_FILES }}
       shell: bash
     
     - name: pylint
-      run: pylint --errors-only --disable=C0301 --disable=C0326 ${{ steps.project_files.outputs.files }}
+      run: pylint --errors-only --disable=C0301 --disable=C0326 ${{ env.PROJECT_FILES }}
       shell: bash
 
     - name: unit tests
